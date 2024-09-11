@@ -1,13 +1,6 @@
 
 import java.util.Scanner;
 public class CellPhoneLab {
-//TODO
-//line 1: DONE
-//line 2: DONE
-//line 3: DONE
-//line 4: DONE
-//Commenting: DONE
-//DEBUGGING: DONE (initialization of variables)
    
     public static void main(String[] args) {
         Scanner input; //creating scanner
