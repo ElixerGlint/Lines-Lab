@@ -14,6 +14,20 @@ public class App {
         double difference;
         int isteacher;
         double finalcost = 0.0;
+        final int familyrate = 108;
+        final double teacherdiscount = 0.9;
+        final int essencialstart = 65;
+        final int essencialmeltingrate = 5;
+        final int essencialmaxrate = 40;
+        final double essencialtax = 1.08;
+        final int magentastart = 74;
+        final int magentameltingrate = 4;
+        final int magentamaxrate = 54;
+        final int magentaplusstart = 92;
+        final int magentaplusmeltingrate = 7;
+        final int magentaplusmaxrate = 57;
+   
+        
        
         System.out.println("What is the monthly cost of your current plan?"); //grabbing current cost
         currentcost = input.nextInt();
@@ -43,19 +57,19 @@ public class App {
 
 
             if (lines <= 5) {
-                newlinecost = lines*(65-(5*lines));
+                newlinecost = lines*(essencialstart-(essencialmeltingrate*lines));
             }
             if (lines > 5) {
-                newlinecost = lines*(40);
+                newlinecost = lines*(essencialmaxrate);
             } //Calculating what the user currently pays, depending on what carrier they use
-            finalcost = (double)newlinecost* 1.08; //adding the 8% buff essencial customers pay
+            finalcost = (double)newlinecost* essencialtax; //adding the 8% buff essencial customers pay
         }
         if (carrier == 2) { //magenta plan math
             if (lines <= 5) {
-                newlinecost = lines*(74-(4*(lines)));
+                newlinecost = lines*(magentastart-(magentameltingrate*(lines)));
             }
             if (lines > 5) {
-                newlinecost = lines*(54);
+                newlinecost = lines*(magentamaxrate);
             }
 
 
@@ -63,23 +77,23 @@ public class App {
         }
         if (carrier == 3) { //magenta + plan math
             if (lines <= 5) {
-                newlinecost = lines*(92-(7*(lines)));
+                newlinecost = lines*(magentaplusstart-(magentaplusmeltingrate*(lines)));
             }
             if (lines > 5) {
-                newlinecost = lines*(57);
+                newlinecost = lines*(magentaplusmaxrate);
             }
 
 
             finalcost = (double)newlinecost;
         }
         if (carrier == 4) { //family of 4 plan
-            newlinecost = 108;
+            newlinecost = familyrate;
             finalcost = (double)newlinecost;
         }
        
        
         if(isteacher==1) { //10% off for teachers
-            finalcost *= .9;
+            finalcost *= teacherdiscount;
         }
        
        
