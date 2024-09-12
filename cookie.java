@@ -1,6 +1,7 @@
 import java.util.Scanner;
 //spam protection
 //test
+//heigjag
 public class cookie {
     public static void main(String[] args) {
         System.out.println("Welcome to cookie clicker");
