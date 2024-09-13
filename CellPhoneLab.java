@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.lang.Math;
 public class CellPhoneLab {
    
     public static void main(String[] args) {
@@ -8,14 +9,14 @@ public class CellPhoneLab {
        
         int carrier; //initializing variables
         int lines;
-        int currentcost;
+        double currentcost;
         int newlinecost = 0;
         double difference;
         int isteacher;
         double finalcost = 0.0;
        
         System.out.println("What is the monthly cost of your current plan?"); //grabbing current cost
-        currentcost = input.nextInt();
+        currentcost = input.nextDouble();
        
         System.out.println("How many lines do you have (numbers only)? "); //grabbing amount of lines
         lines = input.nextInt();
@@ -81,17 +82,19 @@ public class CellPhoneLab {
             finalcost *= .9;
         }
        
-       
+        finalcost = (Math.round(finalcost*100.0))/100.0;
+
         System.out.println("The cost of the plan is " + finalcost + "$"); //stating the cost of the plan
        
        
         difference = (double)currentcost - finalcost; //finding the difference between the two plans
-       
+        difference = (Math.round(difference*100.0))/100.0;
+        
         if (difference > 0) { //choosing wether to say they lose money or gain money per month by switching
-            System.out.println("You will save " + difference + "$ per month by switching to M-mobile");
+            System.out.println("You will save " + difference + "$ per month by switching to M-Tobile");
         }
         else if (difference < 0) {
-            System.out.println("You will lose " + Math.abs(difference) + "$ per month by switching to M-mobile");
+            System.out.println("You will lose " + Math.abs(difference) + "$ per month by switching to M-Tobile");
         }
         else if (difference == 0) {
             System.out.println("There is no difference between the two lines.");
