@@ -26,6 +26,9 @@ public class App {
         final int magentaplusstart = 92;
         final int magentaplusmeltingrate = 7;
         final int magentaplusmaxrate = 57;
+
+
+
        
         System.out.println("What is the monthly cost of your current plan?"); //grabbing current cost
         currentcost = input.nextInt();
